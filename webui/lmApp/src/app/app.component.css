@@ -1,0 +1,11 @@
+a.brand-font {
+    font-family: Magneto;
+    font-size: 36px;
+    font-weight: bold;
+    text-decoration: none;
+    padding-top: 10px;
+}
+a {
+    color: #f9fcff;
+    text-decoration: none;
+}

@@ -1,0 +1,32 @@
+<div class="container">
+
+<br><br><br>
+<h1 style="position: relative; left: 59px; top: -220px;" >YOUR ORDER HISTORY</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>VENDOR NAME</th>
+      <th>ORDER ID</th>
+      <th>ORDER       DATE</th>
+      <th>STATUS</th>
+      <th>WALLET SOURCE</th>
+      <th>AMOUNT</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr  *ngFor="let d of details| paginate: { itemsPerPage: 2, currentPage: p }; let i = index">
+      <td>{{d.venName}}</td>
+      <td>{{d.orderId}}</td>
+      <td>{{d.orderDate}}</td>
+      <td>{{d.orderStatus}}</td>
+      <td>{{d.orderStatus}}</td>
+      <td><p>&#8377;{{d.totalOrderPrice}}</p></td>
+    </tr>
+  </tbody>
+  <div class = "ngx-pagination">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</table>
+

@@ -1,0 +1,75 @@
+
+<div class="container">
+	<div class="row">
+		
+        <div class="receipt-main col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+            <div class="row">
+    			<div class="receipt-header">
+					<div class="col-xs-6 col-sm-6 col-md-6">
+						<div class="receipt-left"></div>
+							<img class="img-responsive" alt="iamgurdeeposahan" src="assets/images/{{username}}.jpg" style="width: 71px; border-radius: 43px;">
+						</div>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 text-right">
+						<div class="receipt-right">
+							<h5>{{venName}}</h5>
+						</div>
+					</div>
+				
+            </div>
+			
+			<div class="row">
+				<div class="receipt-header receipt-header-mid">
+					<div class="col-sm-10 col-md-2 text-left">
+						<div class="receipt-right">
+							<h5>{{name}}</h5>
+							<h5>Order Number : {{orderId}}</h5>  
+						</div>
+					</div>
+					<div class="col-xs-4 col-sm-4 col-md-4">
+						<div class="receipt-left">
+							<h1>Receipt</h1>
+						</div>
+					</div>
+				</div>
+            </div>
+			
+            <div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Food Item</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-md-3">{{menItem}} </td>
+                            <td class="col-md-3">{{qty}}</td>
+                            <td class="col-md-3"><p>&#8377; {{menPrice}}</p></td>
+                            <td class="col-md-3"><i class="fa fa-inr"></i><p>{{total}}</p></td>
+                        </tr>
+                        <tr>
+                            <td class="text-left"><h2><strong>Total: </strong></h2></td>
+                            <td class="text-left text-danger"><h2><strong><i class="fa fa-inr"></i><p>{{total}}</p></strong></h2></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+			
+			<div class="row">
+				<div class="receipt-header receipt-header-mid receipt-footer">
+					<div class="col-xs-10 col-sm-10 col-md-10 text-left">
+						<div class="receipt-right">
+							<p><b>Date :</b>{{orderDate}}</p>
+							<h5 style="color: rgb(140, 140, 140);">Thank you!!</h5>
+						</div>
+					</div>
+				</div>
+            </div>
+			
+        </div>    
+	</div>
+</div>

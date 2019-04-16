@@ -1,0 +1,70 @@
+
+<div class="container emp-profile">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img src="assets/images/{{customer?.cusUserName}}.jpg" alt=""/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                                    <h1>
+                                        {{customer?.cusName}}
+                                    </h1>
+                                    <h6>
+                                        Employee
+                                    </h6>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label _ngcontent-c4 style="position: relative; left: -108px; top: -151px;" >User ID</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p style="position: relative; left: -206px; top: -150px;" >{{customer?.cusUserName}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label _ngcontent-c4 style="position: relative; left: -118px; top: -152px;">Name</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p style="position: relative; left: -166px; top: -150px;" >{{customer?.cusName}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label _ngcontent-c4 style="position: relative; left: -120px; top: -152px;">Email</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p style="position: relative; left: -135px; top: -157px;" >{{customer?.cusEmail}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label _ngcontent-c4 style="position: relative; left: -111px; top: -151px;">Contact</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p style="position: relative; left: -199px; top: -151px;" >{{customer?.cusPhoneNo}}</p>
+                                            </div>
+                                        </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+        </div>

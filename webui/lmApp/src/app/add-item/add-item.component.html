@@ -1,0 +1,13 @@
+<div>
+  <form  #f="ngForm" (ngSubmit)="submit(f)">
+    <div class="form-group">
+      <h1>Menu</h1>
+        <select class="form-control" id="list1" [(ngModel)]="selectedmenu" (change)="foodOptionSelected(selectedmenu)" name="selectedmenu">
+          <option *ngFor="let m of menu" [value]="m.menId">{{m.menItem}}</option>
+        </select>
+    </div>
+    <h1>Add Price</h1>
+    <textarea class="form-name" rows="1" id="str" ngModel #price="ngModel" name="price"></textarea><br><br>
+    <input type="button"(click)="update(price.value)" class="btn btn-primary" value="UPDATE"/>
+  </form>
+</div>

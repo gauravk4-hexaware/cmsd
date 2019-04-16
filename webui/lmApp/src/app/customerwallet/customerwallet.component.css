@@ -1,0 +1,12 @@
+.table {
+    width: 80%;
+    margin:auto;
+    text-align: left;
+    border: 3px solid black;
+    position: relative;
+    color: #212529;
+    margin-top: 5px;
+    padding: 146px 0px;
+
+}
+

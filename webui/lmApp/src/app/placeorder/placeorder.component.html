@@ -1,0 +1,77 @@
+<div class="row">
+  <div class="col-md-8">
+  <form  #f="ngForm" (ngSubmit)="submit(f)">
+    <div class="form-group">
+      <h1>Menu</h1>
+      <select class="form-control" id="list1" [(ngModel)]="selectedmenu" (change)="foodOptionSelected(selectedmenu)" name="selectedmenu">
+        <option *ngFor="let m of menu" [value]="m.menId">{{m.menItem}}</option>
+      </select>
+      </div>
+      <div class="row">
+          <div class="card" *ngFor="let v of vendors" style="width: 18rem; position: relative; left: 49px; top: 3px;">
+          <div class="box" >
+          <div class="ribbon blue"><span>{{v.venName}}</span></div>
+            <img class="card-img-top" src="assets/images/{{v.menId}}.jpg/" alt="Card image cap">
+        </div>
+            <div class="card-body" >
+              <h5 class="card-title">CALORIES : {{v.menCalories}}</h5>
+              <h5 class="card-title">RATING : {{v.ratings}}</h5>
+              <h5 class="card-title">PRICE : {{v.menPrice}}</h5>
+              <a class="btn btn-info" (click)="VendorIdSelected(v)">choose</a>
+            </div>
+          </div>
+          </div>
+    <div class="form-group">
+      <h1> Quantity</h1>
+      <select class="form-control" id="list1" min="0" max="100"  [(ngModel)]="selectedQty" (change)="calulateTotalPrice(selectedQty)" name="selectedqty">
+        <option hidden value="default">Select An Option</option>
+        <option [value]="1">1</option>
+        <option [value]="2">2</option>
+        <option [value]="3">3</option>
+        <option [value]="4">4</option>
+        <option [value]="5">5</option>
+        <option [value]="10">10</option>
+        <option [value]="15">15</option>
+        <option [value]="20">20</option>
+        <option [value]="30">30</option>
+        <option [value]="50">50</option>
+        <option [value]="60">60</option>
+        <option [value]="75">75</option>
+        <option [value]="80">80</option>
+        <option [value]="100">100</option>
+      </select>
+    </div>
+    <div><h2>Total Order Price: {{total}}</h2></div>
+    <div class="form-group" *ngIf="wallet && wallet.length > 0">
+        <h1>Wallet</h1>
+        <select name="selectedFood" class="form-control" id="list1"  [(ngModel)]="selectedWalId" (change)="walletId(selectedWalId)" name="selected" >
+          <option  [value]="w.walletId" *ngFor="let w of wallet">Wallet Source:{{w.walletSource}}</option>
+        </select>
+    </div>
+    <div *ngIf="wallet && wallet.length === 0">
+      <span class="alert alert-danger">You do not have sufficient balance</span>
+    </div>
+    <button type="submit" class="btn btn-primary" value="Place Order">Place Order</button>
+    </form>
+  </div>
+
+  <div class="col-md-4">
+      <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Source</th>
+              <th scope="col">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor ="let w of wall">
+              <td>{{w.walletSource}}</td>
+              <td><p>&#8377;{{w.walletAmount | number  : '1.2-2'}}</p></td>
+            </tr>
+          </tbody>
+        </table>
+     <tr>
+         Total balance:<p style="position: relative; left: 200px; top: -44px;">&#8377;{{wallTotal | number  : '1.2-2'}}</p>
+     </tr>
+  </div>
+

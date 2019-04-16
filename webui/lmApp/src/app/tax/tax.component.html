@@ -1,0 +1,24 @@
+<div class= "main">
+  <h1 style="position: relative; left: 6px; top: 27px; will-change: top, left;" >TAX CALCUTATION</h1>
+  <H4 style="position: relative; left: -570px; top: 8px;">SELECT THE MONTH</H4>
+  <select  style="position: relative; left: -1px; top: 21px;" class="form-control" id="list1" min="0" max="100"  [(ngModel)]="selectedQty" (change)="update(selectedQty)" name="selectedqty">
+      <option hidden value="default">Select An Option</option>
+      <option [value]="1">JAN</option>
+      <option [value]="2">FEB</option>
+      <option [value]="3">MARCH</option>
+      <option [value]="4">APRIL</option>
+      <option [value]="5">MAY</option>
+      <option [value]="6">JUNE</option>
+      <option [value]="7">JULY</option>
+      <option [value]="8">AUGUST</option>
+      <option [value]="9">SEP</option>
+      <option [value]="10">OCT</option>
+      <option [value]="11">NOV</option>
+      <option [value]="12">DEC</option>
+
+    </select>
+<h5 style="position: relative; left: -550px; top: 75px; will-change: top, left;">Total Revenue : &#8377;{{tax.sum}}</h5>
+<h5 style="position: relative; left: -550px; top: 72px; will-change: top, left;">Total GST : &#8377;{{tax.sum}} * 5 % =  &#8377;{{tax.gst}}</h5>
+<h5 style="position: relative; left: -550px; top: 69px; will-change: top, left;">Total Central Tax : &#8377;{{tax.sum}} * 2.5 % =  &#8377;{{tax.centralTax}}</h5>
+<h5 style="position: relative; left: -550px; top: 67px; will-change: top, left;" >Total State Tax : &#8377;{{tax.sum}} * 2.5 % =  &#8377;{{tax.stateTax}}</h5>
+</div>

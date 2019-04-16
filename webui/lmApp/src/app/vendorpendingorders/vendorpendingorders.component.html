@@ -1,0 +1,52 @@
+
+<div class="container">
+  <h1>Pending Orders</h1><br><br><br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="row">ORDER ID</th>
+        <th>MENU ID</th>
+        <th>MENU ITEM</th>
+        <th>QUANTITY</th>
+        <th>AMOUNT</th>
+        <th scope="row">ORDER ITEM ID</th>
+        <th scope="row">UPDATE STATUS</th>
+        <th scope="row">COMMENTS</th>
+        <th>UPDATE</th>
+      </tr>
+    </thead>
+    <tbody>
+     <tr  *ngFor="let d of orderhistory">
+        <td>{{d.orderId}}</td>
+        <td>{{d.menId}}</td>
+        <td>{{d.menItem}}</td>
+        <td>{{d.quantity}}</td>
+        <td>{{d.price}}</td>
+        <td>{{d.orderItemId}}</td>
+       <td>
+         <!--<div class="form-group">
+              <select class="form-control" id="selectedk" ngModel #selectedStatus="ngModel" name="selectedk" >
+                <option [value]="1" >ACCEPTED</option>
+                <option [value]="2">DENIED</option>
+              </select>
+            </div>-->
+            <label class="switch">
+                <input type="checkbox">
+                <div class="slider round"><!--ADDED HTML -->
+                  <option class="on" id="onToggleswitchId"  (click)= "onTest()"  >Rejected</option>
+                  <option class="off" id="offToggleswitchId"  (click)="offTest()"   >Accepted</option><!--END-->
+                </div></label>
+       </td>
+        <td><textarea class="form-control" rows="1" id="str" ngModel #comments="ngModel" name="comments"></textarea></td>
+        <td><input type="button"(click)="update(comments.value, d )" class="btn btn-primary" value="UPDATE"/></td>
+      </tr>
+    </tbody>
+</table>
+
+</div>
+<!---<script>
+  $("#update").click(function(){
+    $('#form_add')[0].reset();
+  });
+</script>
+--->

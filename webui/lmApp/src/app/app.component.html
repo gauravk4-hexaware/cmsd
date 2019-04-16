@@ -1,0 +1,15 @@
+<div style="font-family:georgia,garamond,serif;font-size:16px;font-style:italic;text-align:center;">
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="index.html" class="pull-left brand-font">
+          Hot Serve
+        </a>
+<a class="btn btn-primary" style="position: relative; left: 803px; top: 2px;" [routerLink]="['']" >
+  <i class="fa fa-home" style="color: #fff;"></i>
+</a>
+
+      <a class="btn btn-primary" style="position: relative; left: -162px; top: 3px;" *ngIf="!readLocalStorage('name')" [routerLink]="['login/customerlogin']">Login</a>
+      <a class="btn btn-primary" style="position: relative; left: -162px; top: 3px;" *ngIf="readLocalStorage('name')" [routerLink]="['login/customerlogin']" (click)="clear()">{{readLocalStorage('name')}}, Logout</a>
+    </nav>
+    <router-outlet></router-outlet>
+    </div>
+
